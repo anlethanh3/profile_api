@@ -1,0 +1,35 @@
+class Helper {
+  String validateEmail(String value) {
+    if (value.isEmpty) {
+      return 'Email is required';
+    }
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    if (!regex.hasMatch(value))
+      return 'Enter Valid Email';
+    else
+      return null;
+  }
+
+  String validateName(String value) {
+    if (value.isEmpty) {
+      return 'Name is required';
+    }
+    return null;
+  }
+
+  String validateAge(String value) {
+    if (value.isEmpty) {
+      return 'Age is required';
+    }
+    return null;
+  }
+
+  String validateGender(int value) {
+    if (value < 0) {
+      return 'Select gender';
+    }
+    return null;
+  }
+}
